@@ -1,5 +1,5 @@
 # ExtJs Cheat Sheet
-ExtJs Cheat Sheet Cheat Sheet with the most needed stuff..
+- Ext JS is a class-based, object-oriented framework. There are many hundreds of classes provided by Ext JS that you can use or extend to create your application. These classes range from non-visual classes that manage data and server communication to user interface components that provide powerful functionality. By creating your own classes based on these components, you can concentrate on making a compelling application
 
 <br> <br>
 
