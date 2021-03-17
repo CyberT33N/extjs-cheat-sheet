@@ -218,23 +218,19 @@ The result is that the Model and framework perform as much work as possible, min
 <br><br>
 
 
-*(M) Model* - This is the data for your application. A set of classes (called “Models”) defines the fields for their data (e.g. a User model with user-name and password fields). Models know how to persist themselves through the data package and can be linked to other models via associations.
+**(M) Model** - This is the data for your application. A set of classes (called “Models”) defines the fields for their data (e.g. a User model with user-name and password fields). Models know how to persist themselves through the data package and can be linked to other models via associations. Models are normally used in conjunction with Stores to provide data for grids and other components. Models are also an ideal location for any data logic that you may need, such as validation, conversion, etc.
 
 <br>
 
-Models are normally used in conjunction with Stores to provide data for grids and other components. Models are also an ideal location for any data logic that you may need, such as validation, conversion, etc.
+**(V) View** - A View is any type of component that is visually represented. For instance, grids, trees and panels are all considered Views.
 
-<br><br>
+<br>
 
-*(V) View* - A View is any type of component that is visually represented. For instance, grids, trees and panels are all considered Views.
+**(C) Controller** - Controllers are used as a place to maintain the view's logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic.
 
-<br><br>
+<br>
 
-*(C) Controller* - Controllers are used as a place to maintain the view's logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic.
-
-<br><br>
-
-*(VM) ViewModel* - The ViewModel is a class that manages data specific to the View.
+**(VM) ViewModel** - The ViewModel is a class that manages data specific to the View.
 It allows interested components to bind to it and be updated whenever this data changes.
 
 
