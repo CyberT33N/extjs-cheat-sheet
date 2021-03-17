@@ -218,12 +218,28 @@ The result is that the Model and framework perform as much work as possible, min
 
 
 
+
+
+
+
 <br><br><br><br>
 
+
+<br><br>
+
+## View
+- The user interacts with Views, which display data held in Models.
+- You can easily say stuff that will get rendered.
 
 
 ## ViewModel
 - The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
+
+
+
+
+
+
 
 
 
@@ -232,12 +248,46 @@ The result is that the Model and framework perform as much work as possible, min
 
 
 ## Model
-- The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
+- A Model or Entity represents some object that your application manages. For example, one might define a Model for Users, Products, Cars, or other real-world object that we want to model in the system. Models are used by Ext.data.Store, which are in turn used by many of the data-bound components in Ext.
+- You can also call it as schema or object structure.
 
 
 
 
 
+
+
+
+
+<br><br><br><br>
+
+## Record
+- Instances of a Model Class
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## Store
+- The Store class encapsulates a client side cache of Ext.data.Model objects. Stores load data via a Ext.data.proxy.Proxy, and also provide functions for sorting, filtering and querying the Ext.data.Model instances contained within it.
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## Alias
+- List of short aliases for class names. An alias consists of a namespace and a name concatenated by a period as <namespace>.<name>
+  - namespace - The namespace describes what kind of alias this is and must be all lowercase.
+  - name - The name of the alias which allows the lazy-instantiation via the alias. The name shouldn't contain any periods.
 
 
 
