@@ -1,12 +1,182 @@
 # ExtJs Cheat Sheet
 ExtJs Cheat Sheet Cheat Sheet with the most needed stuff..
 
+<br> <br>
 
 
 
 
+# Ext.define (https://docs.sencha.com/extjs/6.5.3/modern/Ext.html#method-define)
+- Defines a class or override. A basic class is defined like this:
+```javascript
+ Ext.define('My.awesome.Class', {
+     someProperty: 'something',
+
+     someMethod: function(s) {
+         alert(s + this.someProperty);
+     }
+
+     ...
+ });
+
+ var obj = new My.awesome.Class();
+
+ obj.someMethod('Say '); // alerts 'Say something'
+```
+
+<br> <br>
+
+
+## Create an anonymous class
+```javascript
+ Ext.define(null, {
+     constructor: function () {
+         // ...
+     }
+ });
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br><br>
+
+
+
+
+
+# Ext.create (https://docs.sencha.com/extjs/6.5.3/modern/Ext.html#method-create)
+- Instantiate a class by either full name, alias or alternate name.
+- 
+<br><br>
+
+If Ext.Loader is enabled and the class has not been defined yet, it will attempt to load the class via synchronous loading.
 
 <br><br>
+
+For example, all these three lines return the same result:
+```javascript
+ // xtype
+ var window = Ext.create({
+     xtype: 'window',
+     width: 600,
+     height: 800,
+     ...
+ });
+
+ // alias
+ var window = Ext.create('widget.window', {
+     width: 600,
+     height: 800,
+     ...
+ });
+
+ // alternate name
+ var window = Ext.create('Ext.Window', {
+     width: 600,
+     height: 800,
+     ...
+ });
+
+ // full class name
+ var window = Ext.create('Ext.window.Window', {
+     width: 600,
+     height: 800,
+     ...
+ });
+
+ // single object with xclass property:
+ var window = Ext.create({
+     xclass: 'Ext.window.Window', // any valid value for 'name' (above)
+     width: 600,
+     height: 800,
+     ...
+ });
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br> <br>
 
 
 # Ext.data.Model (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Model.html)
@@ -335,7 +505,7 @@ Creating a Store is easy - we just tell it the Model and the Proxy to use for lo
 
 
 
-# Inline data
+## Inline data
 - Stores can also load data inline. Internally, Store converts each of the objects we pass in as cfg-data into Model instances:
 ```javascript
  Ext.create('Ext.data.Store', {
@@ -363,16 +533,11 @@ Creating a Store is easy - we just tell it the Model and the Proxy to use for lo
 
 
 
-
-
-
-
-
 <br><br><br><br>
 
 
 
-# Dynamic Loading
+## Dynamic Loading
 - Stores can be dynamically updated by calling the method-load method:
 ```javascript
 store.load({
@@ -397,6 +562,42 @@ store.load({
 
 
 
+<br><br><br><br>
+
+
+
+## Filtering and Sorting
+- Stores can be sorted and filtered - in both cases either remotely or locally. The cfg-sorters and cfg-filters are held inside Ext.util.Collection instances to make them easy to manage. Usually it is sufficient to either just specify sorters and filters in the Store configuration or call method-sort or filter:
+```javascript
+var store = Ext.create('Ext.data.Store', {
+     model: 'User',
+     sorters: [{
+         property: 'age',
+         direction: 'DESC'
+     }, {
+         property: 'firstName',
+         direction: 'ASC'
+     }],
+
+     filters: [{
+         property: 'firstName',
+         value: /Peter/
+     }]
+ });
+ 
+ 
+ 
+ store.filter('eyeColor', 'Brown');
+ store.sort('height', 'ASC');
+```
+
+
+
+
+
+
+
+
 
 
 
@@ -407,7 +608,7 @@ store.load({
 
 
 
-# Loading Nested Data
+## Loading Nested Data
 - Applications often need to load sets of associated data - for example a CRM system might load a User and her Orders. Instead of issuing an AJAX request for the User and a series of additional AJAX requests for each Order, we can load a nested dataset and allow the Reader to automatically populate the associated models. Below is a brief example, see the Ext.data.reader.Reader intro docs for a full explanation:
 ```javascript
  var store = Ext.create('Ext.data.Store', {
