@@ -13,6 +13,9 @@
 
 # Install
 - https://docs.sencha.com/extjs/6.5.3/guides/getting_started/getting_started.html
+- https://docs.sencha.com/extjs/6.5.3/guides/application_architecture/application_architecture.html
+
+
 ```javascript
 # We recommend extracting Ext JS in a fixed location in your "home" directory:
 C:\Users\Me\sencha-sdks    # Windows
