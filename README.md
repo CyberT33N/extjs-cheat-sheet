@@ -470,6 +470,33 @@ User.load(123, {
 
 
 
+<br><br><br><br>
+
+
+
+#### Ajax
+```javascript
+ var store = Ext.create('Ext.data.Store', {
+     autoLoad: true,
+     model: "User",
+     proxy: {
+         type: 'ajax',
+         url: 'users.json',
+         reader: {
+             type: 'json',
+             rootProperty: 'users'
+         }
+     }
+ });
+```
+
+
+
+
+
+
+
+
 
 
 
