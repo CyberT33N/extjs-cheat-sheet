@@ -242,7 +242,79 @@ user.erase({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br> <br>
 __________________________________________________
 __________________________________________________
 <br> <br>
+
+
+
+
+<br><br><br><br>
+
+
+
+## Ext.data.Store (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Store.html)
+- The Store class encapsulates a client side cache of Ext.data.Model objects. Stores load data via a Ext.data.proxy.Proxy, and also provide functions for sorting, filtering and querying the Ext.data.Model instances contained within it.
+
+<br><br>
+
+Creating a Store is easy - we just tell it the Model and the Proxy to use for loading and saving its data:
+```javascript
+// Set up a model to use in our Store
+ Ext.define('User', {
+     extend: 'Ext.data.Model',
+     fields: [
+         {name: 'firstName', type: 'string'},
+         {name: 'lastName',  type: 'string'},
+         {name: 'age',       type: 'int'},
+         {name: 'eyeColor',  type: 'string'}
+     ]
+ });
+
+ var myStore = Ext.create('Ext.data.Store', {
+     model: 'User',
+     proxy: {
+         type: 'ajax',
+         url: '/users.json',
+         reader: {
+             type: 'json',
+             rootProperty: 'users'
+         }
+     },
+     autoLoad: true
+ });
+```
