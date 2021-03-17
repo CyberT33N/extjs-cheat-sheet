@@ -180,6 +180,89 @@ Ext.application({
 
 
 
+<br><br>
+__________________________________________________
+__________________________________________________
+<br><br>
+
+
+# Explanations
+
+
+## MVC
+In an MVC architecture, most classes are either Models, Views or Controllers. The user interacts with Views, which display data held in Models. Those interactions are monitored by a Controller, which then responds to the interactions by updating the View and Model, as necessary.
+
+<br><br>
+
+The View and the Model are generally unaware of each other because the Controller has the sole responsibility of directing updates. Generally speaking, Controllers will contain most of the application logic within an MVC application. Views ideally have little (if any) business logic. Models are primarily an interface to data and contain business logic to manage changes to said data.
+
+<br><br>
+
+The goal of MVC is to clearly define the responsibilities for each class in the application. Because every class has clearly defined responsibilities, they implicitly become decoupled from the larger environment. This makes the app easier to test and maintain, and its code more reusable.
+
+
+
+
+<br><br><br><br>
+
+
+
+## MVVM
+The key difference between MVC and MVVM is that MVVM features an abstraction of a View called the ViewModel. The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
+
+<br><br>
+
+The result is that the Model and framework perform as much work as possible, minimizing or eliminating application logic that directly manipulates the View.
+
+
+
+
+
+<br><br><br><br>
+
+
+
+## ViewModel
+- The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
