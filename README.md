@@ -1029,3 +1029,22 @@ new Ext.panel.Panel({
 });
 ```
 
+
+#### Access data
+```javascript
+// row is this
+// record are field from the model
+listeners: {
+    itemClick: {
+        fn: function(row, record){
+            Ext.Msg.alert('Details',
+                `
+                Name: ${record.get('name')}
+                Description: ${record.get('description')}
+                Image URL: ${record.get('profileImg')}
+                `
+            )
+        }
+    }
+}
+```
