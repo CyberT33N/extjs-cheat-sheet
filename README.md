@@ -69,7 +69,7 @@ ExtJs Cheat Sheet Cheat Sheet with the most needed stuff..
 
 
 
-<br> <br>
+<br><br>
 __________________________________________________
 __________________________________________________
 <br><br>
@@ -156,6 +156,67 @@ For example, all these three lines return the same result:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+__________________________________________________
+__________________________________________________
+<br><br>
+
+
+
+
+
+# Ext.Class (https://docs.sencha.com/extjs/6.5.3/modern/Ext.Class.html)
+- This is a low level factory that is used by Ext.define and should not be used directly in application code. The configs of this class are intended to be used in Ext.define calls to describe the class you are declaring. For example:
+```javascript
+Ext.define('App.util.Thing', {
+    extend: 'App.util.Other',
+
+    alias: 'util.thing',
+
+    config: {
+        foo: 42
+    }
+});
+```
+
+
+<br><br>
+
+
+
+## extend
+- The parent class that this class extends. It is the same logic like JS extends for classes. For example:
+```javascript
+Ext.define('Person', {
+    say: function(text) { alert(text); }
+});
+
+Ext.define('Developer', {
+    extend: 'Person',
+    say: function(text) { this.callParent(["print "+text]); }
+});
+```
 
 
 
