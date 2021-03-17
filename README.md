@@ -9,7 +9,7 @@ ExtJs Cheat Sheet Cheat Sheet with the most needed stuff..
 <br> <br>
 
 
-# Model (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Model.html)
+# Ext.data.Model (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Model.html)
 - A Model or Entity represents some object that your application manages. For example, one might define a Model for Users, Products, Cars, or other real-world object that we want to model in the system. Models are used by Ext.data.Store, which are in turn used by many of the data-bound components in Ext.
 - You can also call it as schema
 
