@@ -256,6 +256,71 @@ Ext.application({
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+__________________________________________________
+__________________________________________________
+<br><br>
+
+
+
+## Ext.app.ViewModel (https://docs.sencha.com/extjs/6.5.3/modern/Ext.app.ViewModel.html)
+- This class manages arbitrary data and its relationship to data models. Instances of ViewModel are associated with some Component and then used by their child items for the purposes of Data Binding.
+```javascript
+Ext.application({
+    name: 'MyApp',
+
+    requires: [
+        'Ext.MessageBox'
+    ],
+
+    launch: function () {
+        Ext.Msg.alert('Hello Ext JS', 'Hello! Welcome to Ext JS.');
+    }
+});
+```
+
+
+
 <br><br>
 
 
