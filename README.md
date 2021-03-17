@@ -275,7 +275,7 @@ The result is that the Model and framework perform as much work as possible, min
 
 ## Store
 - The Store class encapsulates a client side cache of Ext.data.Model objects. Stores load data via a Ext.data.proxy.Proxy, and also provide functions for sorting, filtering and querying the Ext.data.Model instances contained within it.
-
+- You can also say it communicates with the Model.
 
 
 
