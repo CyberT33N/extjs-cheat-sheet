@@ -262,7 +262,8 @@ It allows interested components to bind to it and be updated whenever this data 
 - The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
 
 
-
+## ViewController (https://docs.sencha.com/extjs/6.5.3/classic/Ext.app.ViewController.html)
+- A view controller is a controller that can be attached to a specific view instance so it can manage the view and its child components. Each instance of the view will have a new view controller, so the instances are isolated.
 
 
 
@@ -491,6 +492,47 @@ Ext.application({
 
 <br><br>
 
+
+## Ext.app.ViewController (https://docs.sencha.com/extjs/6.5.3/classic/Ext.app.ViewController.html)
+- A view controller is a controller that can be attached to a specific view instance so it can manage the view and its child components. Each instance of the view will have a new view controller, so the instances are isolated.
+
+<br><br>
+
+When a view controller is specified on a view, events and other handlers that use strings as values will be automatically connected with the appropriate methods in the controller's class.
+
+<br><br>
+
+Sample usage:
+```javascript
+Ext.define('MyViewController', {
+    extend : 'Ext.app.ViewController',
+    alias: 'controller.myview',
+
+    // This method is called as a "handler" for the Add button in our view
+    onAddClick: function() {
+        Ext.Msg.alert('Add', 'The Add button was clicked');
+    }
+});
+
+Ext.define('MyView', {
+    extend: 'Ext.Panel',
+    controller: 'myview',
+
+    items: [{
+        xtype: 'button',
+        text: 'Add',
+        handler: 'onAddClick',  // calls MyViewController's onAddClick method
+    }]
+});
+
+Ext.onReady(function() {
+    new MyView({
+        renderTo: Ext.getBody(),
+        width: 400,
+        height: 200
+    });
+});
+```
 
 
 
