@@ -61,7 +61,7 @@ To alter which field is the identifying field, use the idProperty config.
 
 
 ## Validators
-Models have built-in support for field validators. Validators are added to models as in the follow example:
+ Models have built-in support for field validators. Validators are added to models as in the follow example:
 ```javascript
 Ext.define('User', {
     extend: 'Ext.data.Model',
@@ -85,6 +85,159 @@ Ext.define('User', {
     }
 });
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+## Validation
+- The results of the validators can be retrieved via the "associated" validation record:
+```javascript
+var instance = Ext.create('User', {
+    name: 'Ed',
+    gender: 'Male',
+    username: 'edspencer'
+});
+
+var validation = instance.getValidation();
+```
+
+<br><br>
+
+The returned object is an instance of Ext.data.Validation and has as its fields the result of the field validators. The validation object is "dirty" if there are one or more validation errors present.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+## Using a Proxy
+- Models are great for representing types of data and relationships, but sooner or later we're going to want to load or save that data somewhere. All loading and saving of data is handled via a Ext.data.proxy.Proxy, which can be set directly on the Model:
+```javascript
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: ['id', 'name', 'email'],
+
+    proxy: {
+        type: 'rest',
+        url : '/users'
+    }
+});
+
+
+var user = Ext.create('User', {name: 'Ed Spencer', email: 'ed@sencha.com'});
+user.save(); //POST /users
+
+
+
+// Loading data via the Proxy is accomplished with the static load method:
+// Uses the configured RestProxy to make a GET request to /users/123
+User.load(123, {
+    success: function(user) {
+        console.log(user.getId()); //logs 123
+    }
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+#### Update and destroy
+```javascript
+//the user Model we loaded in the last snippet:
+user.set('name', 'Edward Spencer');
+
+//tells the Proxy to save the Model. In this case it will perform a PUT request to /users/123 as this Model already has an id
+user.save({
+    success: function() {
+        console.log('The User was updated');
+    }
+});
+
+//tells the Proxy to destroy the Model. Performs a DELETE request to /users/123
+user.erase({
+    success: function() {
+        console.log('The User was destroyed!');
+    }
+});
+```
+
+
 
 
 
