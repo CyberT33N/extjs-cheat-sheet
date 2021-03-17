@@ -287,7 +287,7 @@ __________________________________________________
 
 
 
-## Ext.data.Store (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Store.html)
+# Ext.data.Store (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Store.html)
 - The Store class encapsulates a client side cache of Ext.data.Model objects. Stores load data via a Ext.data.proxy.Proxy, and also provide functions for sorting, filtering and querying the Ext.data.Model instances contained within it.
 
 <br><br>
@@ -317,4 +317,128 @@ Creating a Store is easy - we just tell it the Model and the Proxy to use for lo
      },
      autoLoad: true
  });
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+# Inline data
+- Stores can also load data inline. Internally, Store converts each of the objects we pass in as cfg-data into Model instances:
+```javascript
+ Ext.create('Ext.data.Store', {
+     model: 'User',
+     data : [
+         {firstName: 'Peter',   lastName: 'Venkman'},
+         {firstName: 'Egon',    lastName: 'Spengler'},
+         {firstName: 'Ray',     lastName: 'Stantz'},
+         {firstName: 'Winston', lastName: 'Zeddemore'}
+     ]
+ });
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+# Dynamic Loading
+- Stores can be dynamically updated by calling the method-load method:
+```javascript
+store.load({
+    params: {
+        group: 3,
+        type: 'user'
+    },
+    callback: function(records, operation, success) {
+        // do something after the load finishes
+    },
+    scope: this
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+# Loading Nested Data
+- Applications often need to load sets of associated data - for example a CRM system might load a User and her Orders. Instead of issuing an AJAX request for the User and a series of additional AJAX requests for each Order, we can load a nested dataset and allow the Reader to automatically populate the associated models. Below is a brief example, see the Ext.data.reader.Reader intro docs for a full explanation:
+```javascript
+ var store = Ext.create('Ext.data.Store', {
+     autoLoad: true,
+     model: "User",
+     proxy: {
+         type: 'ajax',
+         url: 'users.json',
+         reader: {
+             type: 'json',
+             rootProperty: 'users'
+         }
+     }
+ });
+ 
+ 
+ /*
+ {
+     "users": [{
+         "id": 1,
+         "name": "Peter",
+         "orders": [{
+             "id": 10,
+             "total": 10.76,
+             "status": "invoiced"
+        },{
+             "id": 11,
+             "total": 13.45,
+             "status": "shipped"
+        }]
+     }]
+ }
+ */
 ```
