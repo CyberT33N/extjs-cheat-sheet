@@ -241,8 +241,19 @@ Ext.application({
 });
 ```
 
+<br><br>
 
+#### Include all classes by using wildmark
+```javascript
+Ext.application({
+    name: 'MyApp',
+    extend: 'MyApp.Application',  // <<== added
 
+    requires: [
+        'MyApp.*'   // tell Cmd to include all app classes
+    ]
+});
+```
 
 
 <br><br>
@@ -327,7 +338,7 @@ __________________________________________________
  obj.someMethod('Say '); // alerts 'Say something'
 ```
 
-<br> <br>
+<br><br><br><br>
 
 
 ## Create an anonymous class
@@ -341,6 +352,19 @@ __________________________________________________
 
 
 
+<br><br><br><br>
+
+
+## extend from .js file
+```javascript
+./app/Application.js
+
+Ext.define('MyApp.Application', {
+    extend: 'Ext.app.Application',
+
+    mainView: 'MyApp.view.main.Main'
+});
+```
 
 
 
