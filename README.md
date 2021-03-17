@@ -97,32 +97,135 @@ Sencha Cmd is also monitoring your application directory for changes. Should you
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br><br><br><br>
+
+
 
 
 ## Modifying the Application
 - The starting point of an Ext JS application is app.js (as specified in app.json). The generated app.js file looks something like this:
+```javascript
+Ext.application({
+    name: 'MyApp',
+
+    requires: [
+        'Ext.MessageBox'
+    ],
+
+    launch: function () {
+        Ext.Msg.alert('Hello Ext JS', 'Hello! Welcome to Ext JS.');
+    }
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+__________________________________________________
+__________________________________________________
+<br><br>
+
+# Ext (https://docs.sencha.com/extjs/6.5.3/modern/Ext.html)
+The Ext namespace (global object) encapsulates all classes, singletons, and utility methods provided by Sencha's libraries.
+
+<br><br>
+
+Most user interface Components are at a lower level of nesting in the namespace, but many common utility functions are provided as direct properties of the Ext namespace.
+
+<br><br>
+
+Also many frequently used methods from other classes are provided as shortcuts within the Ext namespace. For example Ext.getCmp aliases Ext.ComponentManager.get.
+
+<br><br>
+
+Many applications are initiated with Ext.application which is called once the DOM is ready. This ensures all scripts have been loaded, preventing dependency issues. For example:
+```javascript
+Ext.application({
+     name: 'MyApp',
+
+     launch: function () {
+         Ext.Msg.alert(this.name, 'Ready to go!');
+     }
+ });
+```
+
+
+<br><br><br><br>
+
+## Ext.application (https://docs.sencha.com/extjs/6.5.3/modern/Ext.html#method-application)
+- Loads Ext.app.Application class and starts it up with given configuration after the page is ready.
 ```javascript
 Ext.application({
     name: 'MyApp',
