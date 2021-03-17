@@ -203,6 +203,20 @@ Ext.define('App.util.Thing', {
 
 <br><br>
 
+## requires (https://docs.sencha.com/extjs/6.5.3/modern/Ext.Class.html#cfg-requires)
+- The parent class that this class extends. It is the same logic like JS extends for classes. For example:
+```javascript
+Ext.define('Mother', {
+    requires: ['Child'],
+    giveBirth: function() {
+        // we can be sure that child class is available.
+        return new Child();
+    }
+});
+```
+
+
+<br><br>
 
 
 ## extend
