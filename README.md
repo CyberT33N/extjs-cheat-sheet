@@ -227,6 +227,15 @@ The result is that the Model and framework perform as much work as possible, min
 
 
 
+<br><br><br><br>
+
+
+
+## Model
+- The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
+
+
+
 
 
 
