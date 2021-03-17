@@ -30,6 +30,16 @@ Ext.define('User', {
         this.set('name', newName);
     }
 });
+
+const user = Ext.create('User', {
+    id   : 'ABCD12345',
+    name : 'Conan',
+    age  : 24,
+    phone: '555-555-5555'
+});
+
+user.changeName();
+user.get('name'); //returns "Conan The Barbarian"
 ```
 
 
