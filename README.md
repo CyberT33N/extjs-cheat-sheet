@@ -6,7 +6,7 @@ ExtJs Cheat Sheet Cheat Sheet with the most needed stuff..
 
 
 
-<br> <br>
+<br><br>
 
 
 # Ext.data.Model (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Model.html)
@@ -42,6 +42,49 @@ user.changeName();
 user.get('name'); //returns "Conan The Barbarian"
 ```
 
+
+
+<br><br><br><br>
+
+
+## The "id" Field and idProperty
+- A Model definition always has an identifying field which should yield a unique key for each instance. By default, a field named "id" will be created with a mapping of "id". This happens because of the default idProperty provided in Model definitions.
+-  
+<br><br>
+
+To alter which field is the identifying field, use the idProperty config.
+
+
+
+<br><br><br><br>
+
+
+
+## Validators
+Models have built-in support for field validators. Validators are added to models as in the follow example:
+```javascript
+Ext.define('User', {
+    extend: 'Ext.data.Model',
+    fields: [
+        { name: 'name',     type: 'string' },
+        { name: 'age',      type: 'int' },
+        { name: 'phone',    type: 'string' },
+        { name: 'gender',   type: 'string' },
+        { name: 'username', type: 'string' },
+        { name: 'alive',    type: 'boolean', defaultValue: true }
+    ],
+
+    validators: {
+        age: 'presence',
+        name: { type: 'length', min: 2 },
+        gender: { type: 'inclusion', list: ['Male', 'Female'] },
+        username: [
+            { type: 'exclusion', list: ['Admin', 'Operator'] },
+            { type: 'format', matcher: /([a-z]+)[0-9]{2,3}/i }
+        ]
+    }
+});
+```
 
 
 
