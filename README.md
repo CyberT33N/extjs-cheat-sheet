@@ -704,3 +704,203 @@ var store = Ext.create('Ext.data.Store', {
  }
  */
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br> <br>
+
+
+
+
+<br><br><br><br>
+
+
+
+# Ext.grid.Panel (https://docs.sencha.com/extjs/6.5.3/classic/Ext.grid.Panel.html)
+- Grids are an excellent way of showing large amounts of tabular data on the client side. Essentially a supercharged <table>, GridPanel makes it easy to fetch, sort and filter large amounts of data.
+
+<br><br>
+
+Grids are composed of two main pieces - a Ext.data.Store full of data and a set of columns to render.
+```javascript
+Ext.create('Ext.data.Store', {
+    storeId: 'simpsonsStore',
+    fields:[ 'name', 'email', 'phone'],
+    data: [
+        { name: 'Lisa', email: 'lisa@simpsons.com', phone: '555-111-1224' },
+        { name: 'Bart', email: 'bart@simpsons.com', phone: '555-222-1234' },
+        { name: 'Homer', email: 'homer@simpsons.com', phone: '555-222-1244' },
+        { name: 'Marge', email: 'marge@simpsons.com', phone: '555-222-1254' }
+    ]
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Simpsons',
+    store: Ext.data.StoreManager.lookup('simpsonsStore'),
+    columns: [
+        { text: 'Name', dataIndex: 'name' },
+        { text: 'Email', dataIndex: 'email', flex: 1 },
+        { text: 'Phone', dataIndex: 'phone' }
+    ],
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody()
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+## Configuring columns
+- By default, each column is sortable and will toggle between ASC and DESC sorting when you click on its header. Each column header is also reorderable by default, and each gains a drop-down menu with options to hide and show columns. It's easy to configure each column - here we use the same example as above and just modify the columns config:
+```javascript
+columns: [
+    {
+        text: 'Name',
+        dataIndex: 'name',
+        sortable: false,
+        hideable: false,
+        flex: 1
+    },
+    {
+        text: 'Email',
+        dataIndex: 'email',
+        hidden: true
+    },
+    {
+        text: 'Phone',
+        dataIndex: 'phone',
+        width: 100
+    }
+]
+```
+
+
+
+
+<br><br><br><br>
+
+
+
+## Renderes
+- As well as customizing columns, it's easy to alter the rendering of individual cells using renderers. A renderer is tied to a particular column and is passed the value that would be rendered into each cell in that column. For example, we could define a renderer function for the email column to turn each email address into a mailto link:
+```javascript
+columns: [
+    {
+        text: 'Email',
+        dataIndex: 'email',
+        renderer: function(value) {
+            return Ext.String.format('<a href="mailto:{0}">{1}</a>', value, value);
+        }
+    }
+]
+```
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+## Sorting & Filtering
+- Every grid is attached to a Ext.data.Store, which provides multi-sort and filtering capabilities. It's easy to set up a grid to be sorted from the start:
+```javascript
+var myGrid = Ext.create('Ext.grid.Panel', {
+    store: {
+        fields: ['name', 'email', 'phone'],
+        sorters: ['name', 'phone']
+    },
+    columns: [
+        { text: 'Name',  dataIndex: 'name' },
+        { text: 'Email', dataIndex: 'email' }
+    ]
+});
+
+
+
+
+
+
+// Sorting at run time is easily accomplished by simply clicking each column header. If you need to perform sorting on more than one field at run time it's easy to do so by adding new sorters to the store:
+myGrid.store.sort([
+    { property: 'name',  direction: 'ASC' },
+    { property: 'email', direction: 'DESC' }
+]);
+```
