@@ -14,6 +14,7 @@ ExtJs Cheat Sheet Cheat Sheet with the most needed stuff..
 - You can also call it as schema
 
 ```javascript
+// User in this case is the Class we will create.
 Ext.define('User', {
     extend: 'Ext.data.Model',
     fields: [
