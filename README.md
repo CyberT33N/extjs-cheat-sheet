@@ -1,8 +1,207 @@
 # ExtJs Cheat Sheet
 - Ext JS is a class-based, object-oriented framework. There are many hundreds of classes provided by Ext JS that you can use or extend to create your application. These classes range from non-visual classes that manage data and server communication to user interface components that provide powerful functionality. By creating your own classes based on these components, you can concentrate on making a compelling application
 
-<br> <br>
 
+
+
+
+
+
+<br><br><br><br>
+
+
+
+# Install
+- https://docs.sencha.com/extjs/6.5.3/guides/getting_started/getting_started.html
+```javascript
+# We recommend extracting Ext JS in a fixed location in your "home" directory:
+C:\Users\Me\sencha-sdks    # Windows
+/Users/Me/sencha-sdks      # Mac OS X
+/home/me/sencha-sdks       # Linux
+
+
+# After unzipping Ext JS in this folder, you should see a sub-folder such as the following (on Windows):
+C:\Users\Myname\sencha-sdks\ext-6.5.3
+
+# Now that Sencha Cmd is installed and the Ext JS SDK is extracted, let's configure Sencha Cmd with this location. For example (on Windows):
+sencha config --prop sencha.sdk.path=C:\Users\Me\sencha-sdks --save
+```
+
+
+<br><br><br><br>
+
+
+## Initializing the Application
+```javascript
+# To create the application, open a terminal or command prompt and create an empty directory and "cd" into it:
+md ~/myapp    # On Windows, replace "~" with "C:\Users\Me"
+cd ~/myapp
+
+# From this directory, we run "sencha app init" to create the application on disk:
+sencha app init --ext@6.5.3 --modern MyApp
+```
+
+<br><br>
+
+This will produce a few lines of output as the application code is generated and the necessary pieces of Ext JS are copied into the current directory. The current directory should now contain:
+- ext651/
+- .gitignore
+- app.js
+- app.json
+- build.xml
+- index.html
+- workspace.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+## Launching the Application
+- To build the application (to allow the browser to load it), run the following command from that same directory:
+```javascript
+sencha app watch
+```
+
+<br><br>
+
+You will see a few lines of information as Sencha Cmd builds the application, but there are two to take note of:
+```javascript
+...
+[INF] Application available at http://localhost:1841
+…
+[INF] Waiting for changes...
+```
+
+<br><br>
+
+While app watch is running, a basic web server is serving the application directory. Now we can load http://localhost:1841 in the browser and see the application.
+
+<br><br>
+
+Sencha Cmd is also monitoring your application directory for changes. Should you make changes to the styling or JavaScript code, Sencha Cmd will detect these changes and update the necessary build outputs to keep the application rendering correctly in the browser. As your changes are detected, Sencha Cmd will log a few lines of output and (in typically a couple seconds) end with "Waiting for changes…" to let you know everything is ready.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+## Modifying the Application
+- The starting point of an Ext JS application is app.js (as specified in app.json). The generated app.js file looks something like this:
+```javascript
+Ext.application({
+    name: 'MyApp',
+
+    requires: [
+        'Ext.MessageBox'
+    ],
+
+    launch: function () {
+        Ext.Msg.alert('Hello Ext JS', 'Hello! Welcome to Ext JS.');
+    }
+});
+```
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+__________________________________________________
+__________________________________________________
+<br><br>
 
 
 
