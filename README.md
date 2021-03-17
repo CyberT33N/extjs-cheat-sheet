@@ -215,6 +215,7 @@ Many applications are initiated with Ext.application which is called once the DO
 Ext.application({
      name: 'MyApp',
 
+     // Once the required classes are loaded and the browser is ready, the launch method is called. This is where the application performs its startup sequence. To get things started, let's define an application class and our main view.Once the required classes are loaded and the browser is ready, the launch method is called. This is where the application performs its startup sequence. To get things started, let's define an application class and our main view.
      launch: function () {
          Ext.Msg.alert(this.name, 'Ready to go!');
      }
