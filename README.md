@@ -219,8 +219,29 @@ Ext.define('Developer', {
 ```
 
 
+<br><br>
 
 
+## alias (https://docs.sencha.com/extjs/6.5.3/modern/Ext.Class.html#cfg-alias)
+- In short words custom name of your class which you can access later as example with Ext.create
+```javascript
+Ext.define('MyApp.CoolPanel', {
+    extend: 'Ext.panel.Panel',
+    alias: ['widget.coolpanel'],
+    title: 'Yeah!'
+});
+
+// Using Ext.create
+Ext.create('widget.coolpanel');
+
+// Using the shorthand for defining widgets by xtype
+Ext.widget('panel', {
+    items: [
+        {xtype: 'coolpanel', html: 'Foo'},
+        {xtype: 'coolpanel', html: 'Bar'}
+    ]
+});
+```
 
 
 
