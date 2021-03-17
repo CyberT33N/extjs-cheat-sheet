@@ -966,3 +966,66 @@ myGrid.store.sort([
     { property: 'email', direction: 'DESC' }
 ]);
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+## Listeners (https://docs.sencha.com/extjs/6.5.3/classic/Ext.grid.Panel.html#cfg-listeners)
+- A config object containing one or more event handlers to be added to this object during initialization. This should be a valid listeners config object as specified in the addListener example for attaching multiple handlers at once.
+```javascript
+new Ext.panel.Panel({
+    width: 400,
+    height: 200,
+    dockedItems: [{
+        xtype: 'toolbar'
+    }],
+    listeners: {
+        click: {
+            element: 'el', //bind to the underlying el property on the panel
+            fn: function(){ console.log('click el'); }
+        },
+        dblclick: {
+            element: 'body', //bind to the underlying body property on the panel
+            fn: function(){ console.log('dblclick body'); }
+        }
+    }
+});
+```
+
