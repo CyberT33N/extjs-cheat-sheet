@@ -274,6 +274,30 @@ The result is that the Model and framework perform as much work as possible, min
 ## View Controller
 - Controllers are used as a place to maintain the view's logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic.
 
+<br><br>
+
+
+## xtype
+- Enables other views to create an instance of our view
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
