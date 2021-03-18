@@ -272,6 +272,12 @@ It allows interested components to bind to it and be updated whenever this data 
 ## Main View
 - The heart/core of the the view. Here you will require all other widgets and stuff. You can say it is the index.html
 
+<br><br>
+
+
+## View Controller
+- Controllers are used as a place to maintain the view's logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic.
+
 
 
 
