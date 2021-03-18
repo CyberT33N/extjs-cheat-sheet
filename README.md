@@ -256,7 +256,6 @@ The result is that the Model and framework perform as much work as possible, min
 
 ## ViewController (https://docs.sencha.com/extjs/6.5.3/classic/Ext.app.ViewController.html)
 - A view controller is a controller that can be attached to a specific view instance so it can manage the view and its child components. Each instance of the view will have a new view controller, so the instances are isolated.
-<br>
 - Simplifies the connection to views using “listeners” and “reference” configs.
 - Leverages the life cycle of views to automatically manage their associated ViewController.
 - Reduces complexity in the ViewController based on a one-to-one relationship with the managed view.
