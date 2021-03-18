@@ -270,7 +270,7 @@ It allows interested components to bind to it and be updated whenever this data 
 <br><br>
 
 ## Main View
-- The heart/core of the the view.
+- The heart/core of the the view. Here you will require all other widgets and stuff. You can say it is the index.html
 
 
 
