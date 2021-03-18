@@ -241,7 +241,7 @@ The result is that the Model and framework perform as much work as possible, min
 <br><br>
 
 ## View
-- A View is any type of component that is visually represented. For instance, grids, trees and panels are all considered Views.
+- A View is nothing more than a Component, which is a subclass of Ext.Component. A view contains all of your application's visual aspects. For instance, grids, trees and panels are all considered Views.
 - The user interacts with Views, which display data held in Models.
 - You can easily say stuff that will get rendered.
 
