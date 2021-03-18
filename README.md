@@ -257,10 +257,12 @@ It allows interested components to bind to it and be updated whenever this data 
 - The user interacts with Views, which display data held in Models.
 - You can easily say stuff that will get rendered.
 
+<br><br>
 
 ## ViewModel
 - The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
 
+<br><br>
 
 ## ViewController (https://docs.sencha.com/extjs/6.5.3/classic/Ext.app.ViewController.html)
 - A view controller is a controller that can be attached to a specific view instance so it can manage the view and its child components. Each instance of the view will have a new view controller, so the instances are isolated.
