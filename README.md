@@ -310,7 +310,7 @@ The result is that the Model and framework perform as much work as possible, min
 
 <br><br><br><br>
 
-## Store
+## Store (https://docs.sencha.com/extjs/6.2.1/modern/Ext.data.Store.html)
 - The Store class encapsulates a client side cache of Ext.data.Model objects. Stores load data via a Ext.data.proxy.Proxy, and also provide functions for sorting, filtering and querying the Ext.data.Model instances contained within it.
 - You can also say it communicates with the Model.
 
@@ -321,7 +321,7 @@ The result is that the Model and framework perform as much work as possible, min
 
 <br><br><br><br>
 
-## Alias
+## Alias (https://docs.sencha.com/extjs/6.2.1/modern/Ext.Class.html#cfg-alias)
 - List of short aliases for class names. An alias consists of a namespace and a name concatenated by a period as <namespace>.<name>
   - namespace - The namespace describes what kind of alias this is and must be all lowercase.
   - name - The name of the alias which allows the lazy-instantiation via the alias. The name shouldn't contain any periods.
