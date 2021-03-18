@@ -1790,3 +1790,180 @@ listeners: {
     }
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br> <br>
+
+
+
+# Ext.panel.Panel (https://docs.sencha.com/extjs/6.2.1/classic/Ext.panel.Panel.html#cfg-dockedItems)
+- Panel is a container that has specific functionality and structural components that make it the perfect building block for application-oriented user interfaces.
+
+<br><br>
+
+Panels are, by virtue of their inheritance from Ext.container.Container, capable of being configured with a layout, and containing child Components.
+
+<br><br>
+
+When either specifying child cfg-items of a Panel, or dynamically adding Components to a Panel, remember to consider how you wish the Panel to arrange those child elements, and whether those child elements need to be sized using one of Ext's built-in layout schemes. By default, Panels use the Ext.layout.container.Auto scheme. This simply renders child components, appending them one after the other inside the Container, and does not apply any sizing at all.
+```javascript
+Ext.create('Ext.panel.Panel', {
+    title: 'Hello',
+    width: 200,
+    html: '<p>World!</p>',
+    renderTo: Ext.getBody()
+});
+```
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+## dockedItems (https://docs.sencha.com/extjs/6.2.1/classic/Ext.panel.Panel.html#cfg-dockedItems)
+```javascript
+var panel = new Ext.panel.Panel({
+    dockedItems: [{
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [{
+            text: 'Docked to the top'
+        }]
+    }]
+});
+```
+
+<br><br>
+
+#### create Button
+```javascript
+dockedItems: [{
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [{
+            xtype: 'button',
+            text: 'save',
+            handler: 'doSave',
+            bind: {
+                disabled: '{!recordChanged}'
+            }
+        }]
+    }],
+```
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
