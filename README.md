@@ -598,6 +598,144 @@ Ext.onReady(function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+__________________________________________________
+__________________________________________________
+<br><br>
+
+
+
+## Ext.app.bind.Formula
+- This class manages a formula defined for an Ext.app.ViewModel. Formulas in a ViewModel can be defined as simply as just a function:
+```javascript
+ formulas: {
+     xy: function (get) { return get('x') * get('y'); }
+ }
+```
+
+
+<br><br>
+
+
+- When you need to be more explicit, "xy" can become an object. The following means the same thing as above:
+```javascript
+formulas: {
+   xy: {
+     get: function (get) { return get('x') * get('y'); }
+   }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 __________________________________________________
 __________________________________________________
