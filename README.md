@@ -1015,24 +1015,6 @@ The returned object is an instance of Ext.data.Validation and has as its fields 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br><br><br><br>
 
 
@@ -1142,6 +1124,129 @@ user.erase({
     }
 });
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+#### Save Method (https://docs.sencha.com/extjs/6.5.3/classic/Ext.data.Model.html#method-save)
+```javascript
+Ext.define('MyApp.model.User', {
+    extend: 'Ext.data.Model',
+    fields: [
+        {name: 'id', type: 'int'},
+        {name: 'name', type: 'string'}
+    ],
+    proxy: {
+        type: 'ajax',
+        url: 'server.url'
+    }
+});
+
+var user = new MyApp.model.User({
+    name: 'Foo'
+});
+
+// pass the phantom record data to the server to be saved
+user.save({
+    failure: function(record, operation) {
+        // do something if the save failed
+    },
+    success: function(record, operation) {
+        // do something if the save succeeded
+    },
+    callback: function(record, operation, success) {
+        // do something whether the save succeeded or failed
+    }
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
