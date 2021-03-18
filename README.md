@@ -2343,3 +2343,110 @@ dockedItems: [{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br> <br>
+
+
+
+# Ext.chart.series.Pie (https://docs.sencha.com/extjs/6.6.0/classic/Ext.chart.series.Pie.html)
+- Creates a Pie Chart. A Pie Chart is a useful visualization technique to display quantitative information for different categories that also have a meaning as a whole. As with all other series, the Pie Series must be appended in the series Chart array configuration. See the Chart documentation for more information. A typical configuration object for the pie series could be:
+```javascript
+Ext.create({
+   xtype: 'polar',
+   renderTo: document.body,
+   width: 400,
+   height: 400,
+   theme: 'green',
+   interactions: ['rotate', 'itemhighlight'],
+   store: {
+       fields: ['name', 'data1'],
+       data: [{
+           name: 'metric one',
+           data1: 14
+       }, {
+           name: 'metric two',
+           data1: 16
+       }, {
+           name: 'metric three',
+           data1: 14
+       }, {
+           name: 'metric four',
+           data1: 6
+       }, {
+           name: 'metric five',
+           data1: 36
+       }]
+   },
+   series: {
+       type: 'pie',
+       highlight: true,
+       angleField: 'data1',
+       label: {
+           field: 'name',
+           display: 'rotate'
+       },
+       donut: 30
+   }
+});
+```
+
+
+
+
