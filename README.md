@@ -1808,6 +1808,139 @@ Ext.create('Ext.form.Panel', {
 
 
 
+
+
+
+
+
+
+
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br> <br>
+
+
+
+
+<br><br><br><br>
+
+
+
+# Ext.grid.column.Check (https://docs.sencha.com/extjs/6.5.3/classic/Ext.grid.column.Check.html)
+- A Column subclass which renders a checkbox in each column cell which toggles the truthiness of the associated data field on click.
+
+```javascript
+var store = Ext.create('Ext.data.Store', {
+    fields: ['name', 'email', 'phone', 'active'],
+    data: [
+        { name: 'Lisa', email: 'lisa@simpsons.com', phone: '555-111-1224', active: true },
+        { name: 'Bart', email: 'bart@simpsons.com', phone: '555-222-1234', active: true },
+        { name: 'Homer', email: 'homer@simpsons.com', phone: '555-222-1244', active: false },
+        { name: 'Marge', email: 'marge@simpsons.com', phone: '555-222-1254', active: true }
+    ]
+});
+
+Ext.create('Ext.grid.Panel', {
+    title: 'Simpsons',
+    height: 200,
+    width: 400,
+    renderTo: Ext.getBody(),
+    store: store,
+    columns: [
+        { text: 'Name', dataIndex: 'name' },
+        { text: 'Email', dataIndex: 'email', flex: 1 },
+        { text: 'Phone', dataIndex: 'phone' },
+        { xtype: 'checkcolumn', text: 'Active', dataIndex: 'active' }
+    ]
+});
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br> <br>
 __________________________________________________
 __________________________________________________
