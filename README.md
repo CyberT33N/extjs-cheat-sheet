@@ -1595,36 +1595,6 @@ Ext.define('MyFirstApp.user.UserChartStore', {
 
 
 
-## Inline data
-- Stores can also load data inline. Internally, Store converts each of the objects we pass in as cfg-data into Model instances:
-```javascript
- Ext.create('Ext.data.Store', {
-     model: 'User',
-     data : [
-         {firstName: 'Peter',   lastName: 'Venkman'},
-         {firstName: 'Egon',    lastName: 'Spengler'},
-         {firstName: 'Ray',     lastName: 'Stantz'},
-         {firstName: 'Winston', lastName: 'Zeddemore'}
-     ]
- });
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br><br><br><br>
-
 
 
 ## Dynamic Loading
