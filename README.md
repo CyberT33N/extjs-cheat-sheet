@@ -241,25 +241,23 @@ The result is that the Model and framework perform as much work as possible, min
 <br><br>
 
 ## View
-- A View is nothing more than a Component, which is a subclass of Ext.Component. A view contains all of your application's visual aspects. For instance, grids, trees and panels are all considered Views.
+- A View is nothing more than a Component, which is a subclass of Ext.Component. **A view contains all of your application's visual aspects. For instance, grids, trees and panels are all considered Views.**
 - The user interacts with Views, which display data held in Models.
 - You can easily say stuff that will get rendered.
 
 <br><br>
 
 ## ViewModel
-- The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “data binding”.
-- The ViewModel is a class that manages data specific to the View. It allows interested components to bind to it and be updated whenever this data changes.
+- The ViewModel coordinates the changes between a Model’s data and the View's presentation of that data using a technique called “**data binding**”.
 
 
 <br><br>
 
 ## ViewController (https://docs.sencha.com/extjs/6.5.3/classic/Ext.app.ViewController.html)
-- A view controller is a controller that can be attached to a specific view instance so it can manage the view and its child components. Each instance of the view will have a new view controller, so the instances are isolated.
+- Controllers are used as a place to maintain the view's logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic. Each instance of the view will have a new view controller, so **provides encapsulation to make nesting views reliable.**
 - Simplifies the connection to views using “listeners” and “reference” configs.
 - Leverages the life cycle of views to automatically manage their associated ViewController.
 - Reduces complexity in the ViewController based on a one-to-one relationship with the managed view.
-- Provides encapsulation to make nesting views reliable.
 - Retains the ability to select components and listen to their events at any level below the associated view.
 
 
@@ -270,9 +268,6 @@ The result is that the Model and framework perform as much work as possible, min
 
 <br><br>
 
-
-## View Controller
-- Controllers are used as a place to maintain the view's logic that makes your app work. This could entail rendering views, routing, instantiating Models, and any other sort of app logic.
 
 <br><br>
 
@@ -314,9 +309,8 @@ The result is that the Model and framework perform as much work as possible, min
 
 
 ## Model
-- This is the data for your application. A set of classes (called “Models”) defines the fields for their data (e.g. a User model with user-name and password fields). Models know how to persist themselves through the data package and can be linked to other models via associations. Models are normally used in conjunction with Stores to provide data for grids and other components. Models are also an ideal location for any data logic that you may need, such as validation, conversion, etc.
-- A Model or Entity represents some object that your application manages. For example, one might define a Model for Users, Products, Cars, or other real-world object that we want to model in the system. Models are used by Ext.data.Store, which are in turn used by many of the data-bound components in Ext.
-- You can also call it as schema or object structure.
+- A Model or Entity represents some object that your application manages.n. **A set of classes (called “Models”) defines the fields for their data (e.g. a User model with user-name and password fields)**. Models know how to persist themselves through the data package and can be linked to other models via associations. **Models are normally used in conjunction with Stores to provide data for grids and other components**. Models are also an ideal location for any data logic that you may need, such as validation, conversion, etc.
+
 
 
 
