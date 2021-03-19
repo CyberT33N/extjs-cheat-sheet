@@ -1589,6 +1589,48 @@ Ext.define('MyFirstApp.user.UserChartStore', {
 
 
 
+<br><br><br><br>
+
+
+
+
+
+## Get data from store after loaded
+- **The load event listener will only work when you use proxy. With static inline data it is not working.
+```javascript
+Ext.define('MyFirstApp.user.UserChartStore', {
+    extend: 'Ext.data.Store',
+
+    autoLoad: true,
+
+    listeners: {
+        load: function(store) {
+            console.log("MyFirstApp.user.UserChartStore loaded..")
+            
+            console.log("store.data.items: " + store.data)
+            Ext.each(store.data.items,function(rec){
+                console.log('rec name: ' + rec.data.name); 
+            });
+        }
+    },
+    
+    proxy: {
+      type: 'ajax',
+      url: 'User.json'
+    },
+
+    alias: 'store.chartstore'
+ });
+```
+
+
+
+
+
+
+
+
+
 
 
 <br><br><br><br>
