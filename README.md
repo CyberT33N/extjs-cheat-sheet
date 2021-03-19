@@ -1053,6 +1053,7 @@ __________________________________________________
 - A Model or Entity represents some object that your application manages. For example, one might define a Model for Users, Products, Cars, or other real-world object that we want to model in the system. Models are used by Ext.data.Store, which are in turn used by many of the data-bound components in Ext.
 - You can also call it as schema
 
+
 ```javascript
 // User in this case is the Class we will create.
 Ext.define('User', {
@@ -1464,31 +1465,118 @@ __________________________________________________
 
 <br><br>
 
+- **You can create fields inside of your Model or you can directly create them in your Store. If you directly include them in your Store then you do not have to set the model property**
+
+<br><br>
+
+
 Creating a Store is easy - we just tell it the Model and the Proxy to use for loading and saving its data:
 ```javascript
-// Set up a model to use in our Store
- Ext.define('User', {
-     extend: 'Ext.data.Model',
-     fields: [
-         {name: 'firstName', type: 'string'},
-         {name: 'lastName',  type: 'string'},
-         {name: 'age',       type: 'int'},
-         {name: 'eyeColor',  type: 'string'}
-     ]
- });
+// ---- EXAMPLE #1 - .create() ----
+Ext.define('User', {
+ extend: 'Ext.data.Model',
+ fields: [
+     {name: 'firstName', type: 'string'},
+     {name: 'lastName',  type: 'string'},
+     {name: 'age',       type: 'int'},
+     {name: 'eyeColor',  type: 'string'}
+ ]
+});
 
- var myStore = Ext.create('Ext.data.Store', {
-     model: 'User',
-     proxy: {
-         type: 'ajax',
-         url: '/users.json',
-         reader: {
-             type: 'json',
-             rootProperty: 'users'
-         }
-     },
-     autoLoad: true
- });
+var myStore = Ext.create('Ext.data.Store', {
+ model: 'User',
+ proxy: {
+     type: 'ajax',
+     url: '/users.json',
+     reader: {
+         type: 'json',
+         rootProperty: 'users'
+     }
+ },
+ autoLoad: true
+});
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/* ---- EXAMPLE #2 - .define() ---- */
+
+// MainVM.js (ViewModel)
+Ext.define('MyFirstApp.MainVM', {
+    extend: 'Ext.app.ViewModel',
+
+    stores: {
+        chartstore: {type: 'chartstore'}
+    },
+    
+    alias: 'viewmodel.mainvm'
+});
+
+
+// UserChart.js (View)
+Ext.define('MyFirstApp.user.UserChart', {
+   extend: 'Ext.chart.PolarChart',
+
+   width: 400,
+   height: 400,
+   theme: 'green',
+
+   interactions: ['rotate', 'itemhighlight'],
+
+   requires: ['MyFirstApp.user.UserChartStore'],
+   bind: {store: '{chartstore}'},
+
+   series: {
+       type: 'pie',
+       highlight: true,
+       angleField: 'data1',
+       label: {
+           field: 'name',
+           display: 'rotate'
+       },
+       donut: 30
+   },
+
+   alias: 'widget.chartcustom'
+});
+
+
+// UserChartStore.js (Store)
+Ext.define('MyFirstApp.user.UserChartStore', {
+    extend: 'Ext.data.Store',
+
+    autoLoad: true,
+
+    fields: ['name', 'data1'],
+    data: [{
+       name: 'metric one',
+       data1: 14
+    }, {
+       name: 'metric two',
+       data1: 16
+    }, {
+       name: 'metric three',
+        data1: 14
+   }, {
+       name: 'metric four',
+       data1: 6
+    }, {
+       name: 'metric five',
+       data1: 36
+    }],
+
+    alias: 'store.chartstore'
+});
 ```
 
 
