@@ -1642,6 +1642,8 @@ Ext.define('MyFirstApp.user.UserChartStore', {
 ## Dynamic Loading
 - Stores can be dynamically updated by calling the method-load method:
 ```javascript
+var store = Ext.getStore('hobbystore')
+
 store.load({
     params: {
         group: 3,
@@ -1651,6 +1653,23 @@ store.load({
         // do something after the load finishes
     },
     scope: this
+});
+
+
+
+
+
+
+
+
+// When you are inside of the ViewController it looks like this
+Ext.define('MyFirstApp.MainVC', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.mainvc',
+
+    addDuplicatedProperties(store) {
+        var store = this.getStore('hobbystore').loadData(yourNewDatahere);
+    }
 });
 ```
 
