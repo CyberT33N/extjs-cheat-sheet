@@ -2585,6 +2585,15 @@ Ext.create({
            field: 'name',
            display: 'rotate'
        },
+       
+       tooltip: {
+          trackMouse: true,
+          width: 140,
+          height: 28,
+          renderer: function (toolTip, record, ctx) {
+              toolTip.setHtml(record.get('name') + ': ' + record.get('data1') + ' views');
+       },
+        
        donut: 30
    }
 });
