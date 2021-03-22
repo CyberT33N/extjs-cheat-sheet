@@ -2586,18 +2586,31 @@ Ext.create({
            display: 'rotate'
        },
        
-       tooltip: {
+
+        tooltip: {
           trackMouse: true,
           width: 140,
           height: 28,
           renderer: function (toolTip, record, ctx) {
-              toolTip.setHtml(record.get('name') + ': ' + record.get('data1') + ' views');
-       },
+            var percent = 0;
+            var total = 0;
+            
+            record.store.each(function(rec) {
+                total += rec.get('data1');
+            });
+            percent = Math.round(record.get('data1') / total * 100) + '%';
+
+            toolTip.setHtml(percent);
+
+          }
+      },
         
        donut: 30
    }
 });
 ```
+
+
 
 
 
