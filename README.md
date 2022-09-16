@@ -389,6 +389,30 @@ The result is that the Model and framework perform as much work as possible, min
 
 
 
+<br> <br>
+__________________________________________________
+__________________________________________________
+<br> <br>
+
+# Roles
+```
+window.openRolesConfig()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
