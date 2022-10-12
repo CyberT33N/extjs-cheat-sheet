@@ -66,6 +66,33 @@ This will produce a few lines of output as the application code is generated and
 
 
 
+<br><br>
+<br><br>
+
+# Debug
+
+<br><br>
+
+## Get component
+```
+Ext.getCmp(id)
+Ext.ComponentQuery.query(attribute)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -96,6 +123,13 @@ While app watch is running, a basic web server is serving the application direct
 <br><br>
 
 Sencha Cmd is also monitoring your application directory for changes. Should you make changes to the styling or JavaScript code, Sencha Cmd will detect these changes and update the necessary build outputs to keep the application rendering correctly in the browser. As your changes are detected, Sencha Cmd will log a few lines of output and (in typically a couple seconds) end with "Waiting for changes…" to let you know everything is ready.
+
+
+
+
+
+
+
 
 
 
