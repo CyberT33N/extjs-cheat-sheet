@@ -80,6 +80,14 @@ Ext.ComponentQuery.query(attribute)
 ```
 
 
+<br><br>
+
+## Check user roles keycloak
+```
+Ext.getApplication().getMainView().getViewModel().get(‘user’)
+```
+
+
 
 
 
